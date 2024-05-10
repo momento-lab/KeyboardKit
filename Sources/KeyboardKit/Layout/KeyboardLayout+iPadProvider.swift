@@ -180,7 +180,7 @@ extension KeyboardLayout.iPadProvider {
     
     func layout() -> KeyboardLayout {
         KeyboardLayout.iPadProvider(
-            alphabeticInputSet: .qwerty,
+            alphabeticInputSet: .qwerty(language: Locale.current),
             numericInputSet: .numeric(currency: "$"),
             symbolicInputSet: .symbolic(currencies: [""])
         )

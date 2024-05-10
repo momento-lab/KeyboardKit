@@ -33,6 +33,58 @@ public extension Locale {
     func localizedLanguageName(in locale: Locale) -> String {
         locale.localizedString(forLanguageCode: languageCode ?? "") ?? ""
     }
+    
+    var keyboardFirstRow: String {
+        switch self {
+        case KeyboardLocale.english.locale: "qwertyuiop"
+        case KeyboardLocale.spanish.locale: "qwertyuiop"
+        case KeyboardLocale.french.locale: "azertyuiop"
+        case KeyboardLocale.dutch.locale: "qwertyuiop"
+        case KeyboardLocale.portuguese.locale: "qwertyuiop"
+        case KeyboardLocale.italian.locale: "qwertyuiop"
+        case KeyboardLocale.turkish.locale: "qwertyuıopğü"
+        default: "qwertyuiop"
+        }
+    }
+    
+    var keyboardSecondRow: String {
+        switch self {
+        case KeyboardLocale.english.locale: "asdfghjkl"
+        case KeyboardLocale.spanish.locale: "asdfghjklñ"
+        case KeyboardLocale.french.locale: "qsdfghjklm"
+        case KeyboardLocale.dutch.locale: "asdfghjkl"
+        case KeyboardLocale.portuguese.locale: "asdfghjkl"
+        case KeyboardLocale.italian.locale: "asdfghjkl"
+        case KeyboardLocale.turkish.locale: "asdfghjklşi"
+        default: "asdfghjkl"
+        }
+    }
+    
+    var keyboardThirdRow: String {
+        switch self {
+        case KeyboardLocale.english.locale: "zxcvbnm"
+        case KeyboardLocale.spanish.locale: "zxcvbnm"
+        case KeyboardLocale.french.locale: "wxcvbn´"
+        case KeyboardLocale.dutch.locale: "zxcvbnm"
+        case KeyboardLocale.portuguese.locale: "zxcvbnm"
+        case KeyboardLocale.italian.locale: "zxcvbnm"
+        case KeyboardLocale.turkish.locale: "zxcvbnmöç"
+        default: "zxcvbnm"
+        }
+    }
+    
+    var keyboardThirdRowForPad: String {
+        switch self {
+        case KeyboardLocale.english.locale: "zxcvbnm,."
+        case KeyboardLocale.spanish.locale: "zxcvbnm,."
+        case KeyboardLocale.french.locale: "wxcvbn´,."
+        case KeyboardLocale.dutch.locale: "zxcvbnm,."
+        case KeyboardLocale.portuguese.locale: "zxcvbnm,."
+        case KeyboardLocale.italian.locale: "zxcvbnm,."
+        case KeyboardLocale.turkish.locale: "zxcvbnmöç,."
+        default: "zxcvbnm,."
+        }
+    }
 }
 
 public extension Collection where Element == Locale {

@@ -30,7 +30,7 @@ extension KeyboardLayout {
         ///   - numericInputSet: The numeric input set to use, by default ``InputSet/numeric(currency:)``.
         ///   - symbolicInputSet: The symbolic input set to use, by default ``InputSet/symbolic(currencies:)``.
         public override init(
-            alphabeticInputSet: InputSet = .qwerty,
+            alphabeticInputSet: InputSet = .qwerty(language: Locale.current),
             numericInputSet: InputSet = .numeric(currency: "$"),
             symbolicInputSet: InputSet = .symbolic(currencies: ["€", "£", "¥"])
         ) {

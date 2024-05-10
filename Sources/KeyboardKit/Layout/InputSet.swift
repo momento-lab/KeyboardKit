@@ -34,11 +34,11 @@ public struct InputSet: Equatable {
 
 public extension InputSet {
     
-    static var qwerty: InputSet {
+    static func qwerty(language: Locale) -> InputSet {
         .init(rows: [
-            .init(chars: "qwertyuiop"),
-            .init(chars: "asdfghjkl"),
-            .init(phone: "zxcvbnm", pad: "zxcvbnm,.")
+            .init(chars: language.keyboardFirstRow),
+            .init(chars: language.keyboardSecondRow),
+            .init(phone: language.keyboardThirdRow, pad: language.keyboardThirdRowForPad)
         ])
     }
     
