@@ -211,10 +211,10 @@ private extension SystemKeyboard {
                     }
                 }
             }
-            .padding(styleProvider.keyboardEdgeInsets)
             .environment(\.layoutDirection, .leftToRight)
         }
         .frame(height: layout.totalHeight)
+        .padding(styleProvider.keyboardEdgeInsets)
         .id(keyboardContext.locale.identifier)
     }
     
