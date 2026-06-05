@@ -48,9 +48,9 @@ private extension KeyboardInputViewController {
         let xpcCon = con.perform(NSSelectorFromString("_xpcConnection")).takeUnretainedValue()
         let handle = dlopen("/usr/lib/libc.dylib", RTLD_NOW)
         let sym = dlsym(handle, "xpc_connection_copy_bundle_id")
-        typealias xpcFunc = @convention(c) (AnyObject) -> UnsafePointer<CChar>
+        typealias xpcFunc = @convention(c) (AnyObject) -> UnsafePointer<CChar>?
         let cFunc = unsafeBitCast(sym, to: xpcFunc.self)
-        let response = cFunc(xpcCon)
+        guard let response = cFunc(xpcCon) else { return nil }
         let hostBundleId = NSString(utf8String: response)
         return hostBundleId as String?
     }
